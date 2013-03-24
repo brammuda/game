@@ -1,8 +1,8 @@
 game
 ====
 petualangan mamund siap dirilis
-nama anggota kelompok
-Brammuda Darwan Pradana
-Junizar Fanny Riki Asri
-Rafsanjaya Mahaputra
+nama anggota kelompok :
+Brammuda Darwan Pradana<br>
+Junizar Fanny Riki Asri<br>
+Rafsanjaya Mahaputra<br>
 Shofiana Fitri
