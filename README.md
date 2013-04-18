@@ -17,7 +17,8 @@ Pembuatan konsep game yang akan dibuat<br>
 2.Progres Kedua<br>
 Pembuatan form tampilan<br><br>
 3.Progres Ketiga<br>
-Penambahan script program 
-
+Penambahan script program<br>
+Link untuk melihat Script program<br>
+https://github.com/brammuda/game/blob/master/Script%20Program
 
 
