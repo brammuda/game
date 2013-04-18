@@ -8,6 +8,11 @@ Rafsanjaya Mahaputra<br>
 Shofiana Fitri<br>
 <br>
 
+----------------LAPORAN--------------- <br>
+LINK : https://github.com/brammuda/game/wiki/Petualangan-Mamund
+<br>
+<br>
+
 1.Progres Pertama<br>
 Pembuatan konsep game yang akan dibuat<br>
 <br>Petulangan MaMund<br>
