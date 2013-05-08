@@ -24,6 +24,6 @@ Pembuatan form tampilan<br><br>
 3.Progres Ketiga<br>
 Penambahan script program<br>
 Link untuk melihat Script program<br>
-https://github.com/brammuda/game/blob/master/Script%20Program
+https://github.com/brammuda/game/blob/gh-pages/Script%20Program
 
 
