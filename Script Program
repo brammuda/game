@@ -7,11 +7,14 @@ Public Class tampilanUtama
     Dim gerLa, gerMa, gerMund As Integer 'indikator yang gerak
     Dim posisiMa As Integer = 0 'posisi ma
     Dim posisiMund As Integer = 0 'posisi mund
-    Dim masukanDadu As Integer 'masukan angka dadu
-    Dim totDaduMa As Integer = 0 'total dadu ma
-    Dim totDaduMund As Integer = 0 'total dadu mund
+    Public masukanDadu As Integer 'masukan angka dadu
+    Public totDaduMa As Integer = 0 'total dadu ma
+    Public totDaduMund As Integer = 0 'total dadu mund
+    Public giliran As Integer = 2 'ma dulu yang maju
+    Dim hasilRandomSoal As Integer
+    Dim dataAcak(15) As Integer
+    Public banyakAcak As Integer = 0
 
-    Dim objState = New state
     Dim objSoal = New kelasSoal
 
     Private Sub gerak()
@@ -39,14 +42,14 @@ Public Class tampilanUtama
             End If
             posisiMund = totDaduMund * maxSatuGerak
         End If
-        If gerMa = 0 And gerMund = 0 Then
-            HScrollBar1.Enabled = True
-            tombolMain.Enabled = True
-            If objState.getGiliran() = 1 Then
-                tombolMain.Text = "Ma"
-            Else
-                tombolMain.Text = "Mund"
+            If gerMa = 0 And gerMund = 0 Then
+                HScrollBar1.Enabled = True
+                tombolMain.Enabled = True
             End If
+        If giliran = 2 Then
+            tombolMain.Text = "Ma"
+        Else
+            tombolMain.Text = "Mund"
         End If
     End Sub
 
@@ -89,57 +92,149 @@ Public Class tampilanUtama
     End Sub
 
     Private Sub Utama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objState.setGiliran(1)
-        objState.setJawaban(0)
         tombolMain.Text = "Ma"
-        'beri layar pembuka atau semacamnya
     End Sub
 
     Private Function cekJawaban() As Boolean
-        'cek jawaban
-        Return True 'bila benar
+        Dim posisi As Integer
+        If giliran = 1 Then
+            posisi = totDaduMa
+        Else
+            posisi = totDaduMund
+        End If
+        If objSoal.soal(hasilRandomSoal).jawaban = popUp.jawaban Then
+            Return True
+        End If
+        Return False
     End Function
-    Private Sub mainkan()
-        masukanDadu = CInt(Int((6 * Rnd()) + 1))
-        objState.setDadu(masukanDadu)
-        If objState.getGiliran() = 1 Then
+    Public Sub mainkan()
+        Dim cekMa, cekMund As Integer
+        If cekJawaban() Then
+            cekMa = totDaduMa + masukanDadu
+            cekMund = totDaduMund + masukanDadu
+        Else
+            If totDaduMa - masukanDadu < 1 Then
+                masukanDadu = totDaduMa
+            End If
+            If totDaduMund - masukanDadu < 1 Then
+                masukanDadu = totDaduMund
+            End If
+        End If
+        If giliran = 1 Then
             If cekJawaban() = True Then
-                totDaduMa = masukanDadu + totDaduMa
+                totDaduMa = totDaduMa + masukanDadu
                 seleksiGerak(1, masukanDadu)
+            ElseIf cekJawaban() = False Then
+                totDaduMa = totDaduMa - masukanDadu
+                seleksiGerak(1, -masukanDadu)
             End If
         Else
             If cekJawaban() = True Then
-                totDaduMund = masukanDadu + totDaduMund
+                totDaduMund = totDaduMund + masukanDadu
                 seleksiGerak(2, masukanDadu)
+            ElseIf cekJawaban() = False Then
+                totDaduMund = totDaduMund - masukanDadu
+                seleksiGerak(2, -masukanDadu)
             End If
+        End If
+        If totDaduMa >= 50 Then
+            MsgBox("Ma menang, atur ulang permainan", MsgBoxStyle.Information, "Ma Mund")
+            aturUlang()
+        ElseIf totDaduMund >= 50 Then
+            MsgBox("Mund menang, atur ulang permainan", MsgBoxStyle.Information, "Ma Mund")
+            aturUlang()
         End If
     End Sub
 
     Private Sub pergiliran()
-        If objState.getGiliran() = 1 Then
-            objState.setGiliran(2)
+        If giliran = 1 Then
+            giliran = 2
         Else
-            objState.setGiliran(1)
+            giliran = 1
         End If
     End Sub
+    Private Function GetRandom(ByVal Min As Integer, ByVal Max As Integer) As Integer
+        Dim a As Integer = New Random().Next(Min, Max)
+        While a = 0 Or a = False
+            a = GetRandom(Min, Max)
+        End While
+        Return a
+    End Function
+    Private Function acakSoal() As Integer
+        Dim x As Integer
+sini:
+        x = GetRandom(1, 15)
+        If cekRandomSoal(x) = True Then
+            Return x
+        Else
+            GoTo sini
+        End If
+    End Function
+    Private Function cekRandomSoal(ByVal tes As Integer) As Boolean
+        For i = 1 To banyakAcak
+            If dataAcak(i) = tes Then
+                Return False
+                Stop
+            End If
+        Next
+        Return True
+    End Function
 
     Private Sub tombolMain_Click(sender As Object, e As EventArgs) Handles tombolMain.Click
-        mainkan()
-        popUp.Show()
-        Me.Hide()
+        If banyakAcak = 14 Then
+            banyakAcak = 0
+        End If
         pergiliran()
+        masukanDadu = GetRandom(1, 6)
+        hasilRandomSoal = acakSoal()
+        banyakAcak += 1
+        dataAcak(banyakAcak) = hasilRandomSoal
+        popUp.angkaDadu.Text = "Hasil Acak Dadu " & masukanDadu
+        popUp.soalKe = hasilRandomSoal
+        popUp.awal()
+        popUp.Show()
+    End Sub
+
+    Private Sub AturUlangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AturUlangToolStripMenuItem.Click
+        aturUlang()
+    End Sub
+    Private Sub aturUlang()
+        posisiMa = 0 'posisi ma
+        posisiMund = 0 'posisi mund
+        totDaduMa = 0 'total dadu ma
+        totDaduMund = 0 'total dadu mund
+        giliran = 2 'ma dulu yang maju
+        banyakAcak = 0
+        ma.Location = New Point(20, 148)
+        mund.Location = New Point(20, 245)
+    End Sub
+
+    Private Sub CaraMainToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CaraMainToolStripMenuItem.Click
+        cara_main.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub PermainanToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PermainanToolStripMenuItem1.Click
+        about.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub ProgrammerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProgrammerToolStripMenuItem.Click
+        profile.Show()
+        Me.Hide()
     End Sub
 End Class
+
 
 2. Script Form Pop Up
 Public Class popUp
     Dim objSoal = New kelasSoal
-    Dim objState = New state
-    Dim jawaban As Integer
-    Private Sub popUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim tipe As Integer = objSoal.soal(1).tipe
-        labelSoal.Text = objSoal.soal(1).teks
-        angkaDadu.Text = "angka dadu adalah " + CStr(objState.getDadu())
+    Public soalKe As Integer
+    Public jawaban As String
+    Dim tipe As Integer
+    Public Sub awal()
+        tipe = objSoal.soal(soalKe).tipe
+        labelSoal.Text = objSoal.soal(soalKe).teks
         If tipe = 1 Then
             pilihanA.Visible = False
             pilihanB.Visible = False
@@ -148,16 +243,23 @@ Public Class popUp
             pilihanE.Visible = False
             isian.Visible = False
             tombolIsian.Visible = False
+            pilihanBenar.Visible = True
+            pilihanSalah.Visible = True
         ElseIf tipe = 2 Then
             pilihanBenar.Visible = False
             pilihanSalah.Visible = False
             isian.Visible = False
             tombolIsian.Visible = False
-            pilihanA.Text = objSoal.soal(1).pilihan(1)
-            pilihanB.Text = objSoal.soal(1).pilihan(2)
-            pilihanC.Text = objSoal.soal(1).pilihan(3)
-            pilihanD.Text = objSoal.soal(1).pilihan(4)
-            pilihanE.Text = objSoal.soal(1).pilihan(5)
+            pilihanA.Text = objSoal.soal(soalKe).pilihan(1)
+            pilihanB.Text = objSoal.soal(soalKe).pilihan(2)
+            pilihanC.Text = objSoal.soal(soalKe).pilihan(3)
+            pilihanD.Text = objSoal.soal(soalKe).pilihan(4)
+            pilihanE.Text = objSoal.soal(soalKe).pilihan(5)
+            pilihanA.Visible = True
+            pilihanB.Visible = True
+            pilihanC.Visible = True
+            pilihanD.Visible = True
+            pilihanE.Visible = True
         ElseIf tipe = 3 Then
             pilihanA.Visible = False
             pilihanB.Visible = False
@@ -166,47 +268,49 @@ Public Class popUp
             pilihanE.Visible = False
             pilihanBenar.Visible = False
             pilihanSalah.Visible = False
+            isian.Visible = True
+            tombolIsian.Visible = True
         End If
     End Sub
 
     Private Sub lanjut()
-        objState.setJawaban(jawaban)
+        tampilanUtama.mainkan()
         Me.Hide()
-        tampilanUtama.Show()
+        isian.Text = ""
     End Sub
 
     Private Sub pilihanA_Click(sender As Object, e As EventArgs) Handles pilihanA.Click
-        jawaban = 1
+        jawaban = "1"
         lanjut()
     End Sub
 
     Private Sub pilihanB_Click(sender As Object, e As EventArgs) Handles pilihanB.Click
-        jawaban = 2
+        jawaban = "2"
         lanjut()
     End Sub
 
     Private Sub pilihanC_Click(sender As Object, e As EventArgs) Handles pilihanC.Click
-        jawaban = 3
+        jawaban = "3"
         lanjut()
     End Sub
 
     Private Sub pilihanD_Click(sender As Object, e As EventArgs) Handles pilihanD.Click
-        jawaban = 4
+        jawaban = "4"
         lanjut()
     End Sub
 
     Private Sub pilihanE_Click(sender As Object, e As EventArgs) Handles pilihanE.Click
-        jawaban = 5
+        jawaban = "5"
         lanjut()
     End Sub
 
     Private Sub pilihanBenar_Click(sender As Object, e As EventArgs) Handles pilihanBenar.Click
-        jawaban = 1
+        jawaban = "1"
         lanjut()
     End Sub
 
     Private Sub pilihanSalah_Click(sender As Object, e As EventArgs) Handles pilihanSalah.Click
-        jawaban = 0
+        jawaban = "0"
         lanjut()
     End Sub
 
@@ -214,7 +318,12 @@ Public Class popUp
         jawaban = isian.Text
         lanjut()
     End Sub
+
+    Private Sub popUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
+
 
 3. Script Kelas Soal
 Public Class kelasSoal
@@ -222,45 +331,84 @@ Public Class kelasSoal
         Dim tipe As Integer '1=yes/no 2=pilgan 3=isian
         Dim teks As String 'teks soal
         Dim pilihan() As String 'pilihan untuk tipe soal 2
-        Dim jawaban As Double 'jawaban pertanyaan
+        Dim jawaban As String 'jawaban pertanyaan
     End Structure
-    Public soal(1) As data
+    Public soal(15) As data
     Sub New()
-        ReDim soal(1).pilihan(5)
+        For i = 1 To 15
+            ReDim soal(i).pilihan(5)
+        Next
+        soal(1).tipe = 1 ' ini untuk soal nomor 1, tipe yes/no
+        soal(1).teks = "Jakarta adalah ibukota negara Indonesia"
+        soal(1).jawaban = 1 'benar
+        soal(2).tipe = 1 ' ini untuk soal nomor 2, tipe yes/no
+        soal(2).teks = "2 x 4 + 2 adalah 12"
+        soal(2).jawaban = 0 'salah
+        soal(3).tipe = 1 ' ini untuk soal nomor 3, tipe yes/no
+        soal(3).teks = "badminton adalah suatu olahraga raket yang dimainkan oleh dua orang atau dua pasangan yang saling berlawanan."
+        soal(3).jawaban = 1 'benar
+        soal(4).tipe = 1 ' ini untuk soal nomor 4, tipe yes/no
+        soal(4).teks = "Mark Zuckerberg adalah pembuat media sosial facebook"
+        soal(4).jawaban = 1 'benar
+        soal(5).tipe = 1 ' ini untuk soal nomor 5, tipe yes/no
+        soal(5).teks = "Selat malaka menghubungkan pulau jawa dan pulau sumatra"
+        soal(5).jawaban = 0 'salah
 
-        soal(1).tipe = 2 ' ini untuk soal nomor 1
-        soal(1).teks = "1 + 1 adalah ?"
-        soal(1).pilihan(1) = "1"
-        soal(1).pilihan(2) = "salah_semua"
-        soal(1).pilihan(3) = "3"
-        soal(1).pilihan(4) = "2"
-        soal(1).pilihan(5) = "benar_semua"
-        soal(1).jawaban = 4
+        soal(6).tipe = 2
+soal(6).teks = "Cabang ilmu yang membahas tentang makhluk hidup adalah ?"
+        soal(6).pilihan(1) = "Statistika"
+        soal(6).pilihan(2) = "Biologi"
+        soal(6).pilihan(3) = "Morfologi"
+        soal(6).pilihan(4) = "Bioteknologi"
+        soal(6).pilihan(5) = "Biogeografi"
+        soal(6).jawaban = 2
+        soal(7).tipe = 2
+        soal(7).teks = "Siapakah pencipta lagu Indonesia Raya?"
+        soal(7).pilihan(1) = "Kusbini"
+        soal(7).pilihan(2) = "Iwan Fals"
+        soal(7).pilihan(3) = "Ismail Marzuki"
+        soal(7).pilihan(4) = "W.R. Supratman"
+        soal(7).pilihan(5) = "Susilo Bambanng Yudhoyono "
+        soal(7).jawaban = 4
+        soal(8).tipe = 2
+        soal(8).teks = "Akar dari 49 adalah ?"
+        soal(8).pilihan(1) = "9"
+        soal(8).pilihan(2) = "8"
+        soal(8).pilihan(3) = "7"
+        soal(8).pilihan(4) = "6"
+        soal(8).pilihan(5) = "5"
+        soal(8).jawaban = 3
+        soal(9).tipe = 2
+        soal(9).teks = "Tanggal dan Bulan apakah hari lahirnya ibu RA. Kartini ?"
+        soal(9).pilihan(1) = "21 Mei"
+        soal(9).pilihan(2) = "25 Mei"
+        soal(9).pilihan(3) = "21 Maret"
+        soal(9).pilihan(4) = "25 April"
+        soal(9).pilihan(5) = "21 April"
+        soal(9).jawaban = 5
+        soal(10).tipe = 2
+        soal(10).teks = "Yang merupakan peralatan masukan (input device) adalah?"
+        soal(10).pilihan(1) = "Mouse"
+        soal(10).pilihan(2) = "Printer"
+        soal(10).pilihan(3) = "Monitor"
+        soal(10).pilihan(4) = "Speaker"
+        soal(10).pilihan(5) = "Harddisk"
+        soal(10).jawaban = 1
 
-    End Sub
-End Class
-
-4. Script Kelas State
-Public Class state
-    Private giliran As Integer
-    Private jawaban As Double
-    Private dadu As Integer
-    Public Function getGiliran() As Integer
-        Return giliran
-    End Function
-    Public Sub setGiliran(ByVal nilai)
-        giliran = nilai
-    End Sub
-    Public Function getJawaban() As Double
-        Return jawaban
-    End Function
-    Public Sub setJawaban(ByVal jwb)
-        jawaban = jwb
-    End Sub
-    Public Function getDadu() As Integer
-        Return dadu
-    End Function
-    Public Sub setDadu(ByVal dd)
-        dadu = dd
+        soal(11).tipe = 3 ' ini untuk soal nomor 1,tipe isian
+        soal(11).teks = "8 x 5 / 4 - 10 = ?"
+        soal(11).jawaban = 0
+        soal(12).tipe = 3 ' ini untuk soal nomor 2,tipe isian
+        soal(12).teks = "Siapakah presiden RI yang ketiga ?"
+        soal(12).jawaban = "BJ Habibie"
+        soal(13).tipe = 3 ' ini untuk soal nomor 3,tipe isian
+        soal(13).teks = "Samudra yang terluas di dunia adalah"
+        soal(13).jawaban = "samudra pasifik"
+        soal(14).tipe = 3 ' ini untuk soal nomor 4,tipe isian
+        soal(14).teks = "Tari Kecak adalah tari tradisional yang berasala dari "
+        soal(14).jawaban = "bali"
+        soal(15).tipe = 3 ' ini untuk soal nomor 5,tipe isian
+        soal(15).teks = "Bendera merah putih dijahit oleh "
+        soal(15).jawaban = "Fatmawati"
     End Sub
 End Class
