@@ -1,0 +1,92 @@
+D:\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+D:\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+D:\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+D:\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+D:\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Form1.resources
+D:\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+D:\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+D:\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+D:\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+D:\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\Warta-Jatim\Documents\Visual Studio 2012\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Form1.resources
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+D:\materi kuliah\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.popUp.resources
+D:\materi kuliah\SMT 4\Pemrograman Visual\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.tampilanUtama.resources
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.tampilanUtama.resources
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.popUp.resources
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+D:\materi kuliah\SMT 4\Pemrograman Visual\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.SplashScreen1.resources
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.tampilanUtama.resources
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.popUp.resources
+C:\Users\Warta-Jatim\Documents\[ Bhagas ]\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+D:\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+D:\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+D:\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+D:\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.about.resources
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.cara_main.resources
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.profile.resources
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.tampilanUtama.resources
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.popUp.resources
+D:\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.about.resources
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.cara_main.resources
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.profile.resources
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.tampilanUtama.resources
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.popUp.resources
+C:\Users\Brammuda\Documents\GitHub\game\Hasil Akhir\tugas akhir\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
